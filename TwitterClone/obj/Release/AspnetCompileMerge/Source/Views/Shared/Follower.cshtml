@@ -1,0 +1,106 @@
+﻿@model TwitterClone.Models.FollowModel
+@{
+    ViewBag.Title = "Twitter Follow";
+}
+
+<div id="main" style="margin:10px;">
+    <h1>Follow</h1>
+    <div class="row" style="margin:10px;">
+        @*<span style="float:left">
+            <button type="button" class="btn btn-default">
+                <span class="glyphicon glyphicon-search"></span>
+            </button>
+        </span>
+        <span style="float:left">
+            <input id="txtFollow" type="text" placeholder=" Search person to follow" />
+        </span>*@
+        <input type="text" placeholder="Search person to follow" id="txtFollow" 
+               style="display: block;float: left;height: 35px;width: 160px;" />
+        <button id="btnSearch" type="button" style="display: block;float: left;height: 35px;width: 35px;">
+            <span class="glyphicon glyphicon-search"></span>
+        </button>
+    </div>
+    @if (Model != null)
+    {
+        <div class="row" style="margin:10px;">
+            <a href="javascript:void(0);" id="lnkGetTweets" @*class="anchorDetail"*@ @*data-id="@item.Id"*@>@Model.TweetCount</a> Tweets
+            @*@Html.ActionLink(Model.TweetCount, "GetTweets", "Tweet", new { style = "text-decoration:underline;" })*@ 
+        </div>
+        <div class="row" style="margin:10px;">
+            <a href="javascript:void(0);" id="lnkGetFollowing">@Model.FollowingCount</a> Following
+            @*@Html.ActionLink(Model.FollowingCount, "GetFollowing", "Tweet", new { style = "text-decoration:underline;" }) Following*@
+        </div>
+        <div class="row" style="margin:10px;">
+            <a href="javascript:void(0);" id="lnkGetFollowers">@Model.FollowerCount</a> Followers
+            @*@Html.ActionLink(Model.FollowerCount, "GetFollowers", "Tweet", new { style = "text-decoration:underline;" }) Followers*@
+        </div>
+    }   
+</div>
+<div id="dialog" style="display: none; z-index:9999 !important;">
+</div>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#dialog").dialog({
+            modal: true,
+            autoOpen: false,
+            //title: "",
+            width: 800,
+            height: 500
+        });
+        $('#btnSearch').click(function () {
+            var follower = $('#txtFollow').val();
+            $.ajax({
+                url: '@Url.Action("SearchFollowing", "Tweet")',
+                type: "POST",
+                data: "searchText=" + follower,
+                success: function (response) {
+                    $("#dialog").html(response);
+                    $('#dialog').dialog('open');
+                },
+                error: function (e) {
+                    alert('Error: ' + e.responseText);
+                }
+            });
+        })
+        $('#lnkGetTweets').click(function () {
+            $.ajax({
+                url: '@Url.Action("GetTweets", "Tweet")',
+                type: "GET",
+                success: function (response) {
+                    $("#dialog").html(response);
+                    $('#dialog').dialog('open');
+                },
+                error: function (e) {
+                    alert('Error: ' + e.responseText);
+                }
+            });
+        })
+        $('#lnkGetFollowing').click(function () {
+            $.ajax({
+                url: '@Url.Action("GetFollowers", "Tweet")',
+                type: "GET",
+                success: function (response) {
+                    $("#dialog").html(response);
+                    $('#dialog').dialog('open');
+                },
+                error: function (e) {
+                    alert('Error: ' + e.responseText);
+                }
+            });
+        })
+        $('#lnkGetFollowers').click(function () {
+            $.ajax({
+                url: '@Url.Action("GetFollowing", "Tweet")',
+                type: "GET",
+                success: function (response) {
+                    $("#dialog").html(response);
+                    $('#dialog').dialog('open');
+                },
+                error: function (e) {
+                    alert('Error: ' + e.responseText);
+                }
+            });
+        })
+    })
+</script>

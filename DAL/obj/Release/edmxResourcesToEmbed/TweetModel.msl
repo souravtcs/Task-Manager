@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="twittercloneModelStoreContainer" CdmEntityContainer="twittercloneEntities1">
+    <EntitySetMapping Name="Followings">
+      <EntityTypeMapping TypeName="twittercloneModel.Following">
+        <MappingFragment StoreEntitySet="Following">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FollowerId" ColumnName="FollowerId" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="People">
+      <EntityTypeMapping TypeName="twittercloneModel.Person">
+        <MappingFragment StoreEntitySet="Person">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="JoinedOn" ColumnName="JoinedOn" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tweets">
+      <EntityTypeMapping TypeName="twittercloneModel.Tweet">
+        <MappingFragment StoreEntitySet="Tweet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="TweetMessage" ColumnName="TweetMessage" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="LastModifiedOn" ColumnName="LastModifiedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_TweetFollower">
+      <EntityTypeMapping TypeName="twittercloneModel.vw_TweetFollower">
+        <MappingFragment StoreEntitySet="vw_TweetFollower">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="FollowerId" ColumnName="FollowerId" />
+          <ScalarProperty Name="TweetUserId" ColumnName="TweetUserId" />
+          <ScalarProperty Name="Follower" ColumnName="Follower" />
+          <ScalarProperty Name="TweetMessage" ColumnName="TweetMessage" />
+          <ScalarProperty Name="TweetId" ColumnName="TweetId" />
+          <ScalarProperty Name="TweetUser" ColumnName="TweetUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_Followers">
+      <EntityTypeMapping TypeName="twittercloneModel.vw_Followers">
+        <MappingFragment StoreEntitySet="vw_Followers">
+          <ScalarProperty Name="Following" ColumnName="Following" />
+          <ScalarProperty Name="FollowingId" ColumnName="FollowingId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FollowerId" ColumnName="FollowerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_Tweets">
+      <EntityTypeMapping TypeName="twittercloneModel.vw_Tweets">
+        <MappingFragment StoreEntitySet="vw_Tweets">
+          <ScalarProperty Name="LastModifiedOn" ColumnName="LastModifiedOn" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="TweetMessage" ColumnName="TweetMessage" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

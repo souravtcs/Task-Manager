@@ -1,0 +1,12 @@
+C:\Users\Admin\Documents\Visual Studio 2017\Projects\TwitterClone\BAL\bin\Release\BAL.dll
+C:\Users\Admin\Documents\Visual Studio 2017\Projects\TwitterClone\BAL\bin\Release\BAL.pdb
+C:\Users\Admin\Documents\Visual Studio 2017\Projects\TwitterClone\BAL\bin\Release\DAL.dll
+C:\Users\Admin\Documents\Visual Studio 2017\Projects\TwitterClone\BAL\bin\Release\Model.dll
+C:\Users\Admin\Documents\Visual Studio 2017\Projects\TwitterClone\BAL\bin\Release\EntityFramework.dll
+C:\Users\Admin\Documents\Visual Studio 2017\Projects\TwitterClone\BAL\bin\Release\DAL.pdb
+C:\Users\Admin\Documents\Visual Studio 2017\Projects\TwitterClone\BAL\bin\Release\DAL.dll.config
+C:\Users\Admin\Documents\Visual Studio 2017\Projects\TwitterClone\BAL\bin\Release\Model.pdb
+C:\Users\Admin\Documents\Visual Studio 2017\Projects\TwitterClone\BAL\bin\Release\EntityFramework.xml
+C:\Users\Admin\Documents\Visual Studio 2017\Projects\TwitterClone\BAL\obj\Release\BAL.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Documents\Visual Studio 2017\Projects\TwitterClone\BAL\obj\Release\BAL.dll
+C:\Users\Admin\Documents\Visual Studio 2017\Projects\TwitterClone\BAL\obj\Release\BAL.pdb

@@ -1,0 +1,4 @@
+C:\Users\Admin\Documents\Visual Studio 2017\Projects\TwitterClone\Model\bin\Debug\Model.dll
+C:\Users\Admin\Documents\Visual Studio 2017\Projects\TwitterClone\Model\bin\Debug\Model.pdb
+C:\Users\Admin\Documents\Visual Studio 2017\Projects\TwitterClone\Model\obj\Debug\Model.dll
+C:\Users\Admin\Documents\Visual Studio 2017\Projects\TwitterClone\Model\obj\Debug\Model.pdb

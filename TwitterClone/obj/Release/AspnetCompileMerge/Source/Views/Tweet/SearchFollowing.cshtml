@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Model.UserModel>
+@if (Model != null && Model.Count() > 0)
+{
+<table class="table table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>        
+        <th>
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>                
+        <th>
+            @Html.DisplayNameFor(model => model.JoinedOn)
+        </th>        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>        
+        <td style="display:none;">
+            @Html.HiddenFor(modelItem => item.UserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>        
+        <td>
+            @Html.DisplayFor(modelItem => item.FullName)
+        </td><td>
+            @Html.DisplayFor(modelItem => item.JoinedOn)
+        </td>
+        <td>
+            @Html.ActionLink("Follow", "FollowUser", new { id = item.UserId })
+        </td>
+    </tr>
+}
+
+</table>
+}
+else
+{
+    @Html.Label("No records found!!")
+}
+    

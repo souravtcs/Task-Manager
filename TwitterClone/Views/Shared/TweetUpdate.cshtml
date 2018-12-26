@@ -1,0 +1,42 @@
+﻿@*@model TwitterClone.Models.TweetViewModel*@
+<div style="margin:10px;">    
+    <div>
+        <p><h3>What are you doing?</h3></p>
+        <textarea id="txtTweetMessage" rows="6" cols="90" placeholder="Whats in your mind" wrap="soft"></textarea>
+        @*@Html.TextAreaFor(m=>m.TweetMessage, new { rows = "6", cols = "90" })*@       
+    </div>
+    <div style="margin:10px;">
+        <input id="btnTweet" class="btn-primary btn-sm" type="button" value="Update" style="float:right;" />
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#btnTweet').click(function () {
+            var tweet = {};
+            tweet.TweetMessage = $("#txtTweetMessage").val();
+            if ($("#txtTweetMessage").val().length > 130) {
+                alert("Your tweet should be of maximum 130 characters!!");
+            }
+            else {
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("CreateTweet","Tweet")',
+                    data: '{tw: ' + JSON.stringify(tweet) + '}',
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+                        if (data == "Success")
+                            window.location.href = '@Url.Action("Index", "Tweet")';
+                        else
+                            alert("Some error occurred!!");
+                    },
+                    error: function (xhr) {
+                        alert("Some error occurred while inserting data!!");
+                    }
+                });
+            }
+            return false;
+        })
+    });
+
+</script>
